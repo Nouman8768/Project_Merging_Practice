@@ -1,0 +1,83 @@
+<nav class="bg-[#F4F5FC] py-[11px] relative">
+  <div class="container mx-auto flex items-center justify-between px-3">
+    <div class="logo w-[100px] border-l-[2px] border-[#FFE477] pl-[8px]">
+      <a
+        [routerLink]="['']"
+        class="uppercase font-bold text-[18px] font-[logo] text-primary"
+        >The system educators</a
+      >
+    </div>
+    <div class="menu flex items-center">
+      <ul class="hidden md:flex items-center gap-[69px]">
+        <li>
+          <a
+            [routerLink]="['']"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['contact']"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['class']"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="bg-primary px-[26px] py-[6px] rounded-[30px] text-white"
+            >Free Class</a
+          >
+        </li>
+      </ul>
+      <div
+        class="toggler cursor-pointer flex md:hidden"
+        (click)="navState = !navState"
+      >
+        <img src="/assets/icons/menu.svg" class="toggle-nav w-[22px]" alt="" />
+      </div>
+    </div>
+  </div>
+  <div
+    class="mobile-nav absolute w-full top-[6.5rem] bg-rmp bg-opacity-40 backdrop-blur-[15px] max-h-0 overflow-hidden"
+    [ngClass]="navState ? 'max-h-screen' : ''"
+  >
+    <div class="container mx-auto px-3 py-10">
+      <ul class="flex flex-col">
+        <li>
+          <a
+            [routerLink]="['']"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="navState = !navState"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['contact']"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="navState = !navState"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a
+            [routerLink]="['class']"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="bg-primary rounded-[30px] text-center"
+            (click)="navState = !navState"
+            >Free Class</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
